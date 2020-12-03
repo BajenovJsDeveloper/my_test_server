@@ -4,7 +4,7 @@ const PORT = process.env.PORT || 3000;
 
 app.get('/hello',(req, res) => {
 
-	res.send('hello world')
+	res.send(req.body)
 })
 
 app.listen(PORT, () =>{

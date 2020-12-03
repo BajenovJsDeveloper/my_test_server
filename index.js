@@ -4,12 +4,14 @@ const PORT = process.env.PORT || 3000;
 const messages = [];
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true })) 
 
 app.post('/hello',(req, res) => {
-	messages.push({data: req.body})
+	messages.push({data: req.body, params: req.params})
+	console.log('Params: ',req.params)
 	res.sendStatus(200);
 })
-app.get('/hello/1',(req, res)=>{
+app.get('/hello/info',(req, res)=>{
 
 	res.json({status: 'OK', payload: messages});
 })

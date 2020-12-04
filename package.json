@@ -15,6 +15,6 @@
   "homepage": "https://github.com/BajenovJsDeveloper/my_test_server#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "pidcrypt": "^0.0.31",
+    "pidcrypt": "^0.0.31"
   }
 }

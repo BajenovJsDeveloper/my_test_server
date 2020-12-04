@@ -21,8 +21,9 @@ app.post('/hello',(req, res) => {
 		token: decrypted,
 		text: req.body.text
 	}
-	msgaxios(dataObj);
-	res.sendStatus(200);
+	msgaxios(dataObj).then(resolve => {
+		res.sendStatus(200);	
+	});
 })
 app.get('/hello/info',(req, res)=>{
 	res.json({status: 'OK', payload: messages});
